@@ -9,7 +9,7 @@ Upon startup, the account-service is loaded with 3 customer records having custo
 
 #Running the services
 1. Clone the account-service repo main branch from: https://github.com/Chika-Antonnie/Account-Service.git
-2. Clone the transaction-service repo main branch from: 
+2. Clone the transaction-service repo main branch from: https://github.com/Chika-Antonnie/Transaction-Service
 3. Build the two services using maven command: mvn clean package.
 4. Run the account-service jar file with Java command: java -jar target/account-service.jar
 5. Run the transaction-service jar file with Java command: java -jar target/transaction-service.jar
