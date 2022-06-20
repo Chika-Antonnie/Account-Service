@@ -1,4 +1,4 @@
-package com.chika.accountservice.entity;
+package com.chika.accountservice.data.entity;
 
 
 import com.chika.accountservice.util.enums.AccountStatus;
@@ -24,11 +24,7 @@ public class Account extends BaseEntity {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @GeneratedValue(generator = "acct-sequence-generator")
-    @GenericGenerator(name = "acct-sequence-generator", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
-            parameters = {@Parameter(name = "sequence_name", value = "account_sequence"), @Parameter(name = "initial_value", value = "3000"),
-                    @Parameter(name = "increment_size", value = "1")}
-    )
+    @Column(nullable = false, unique = true)
     private String accountNumber;
 
     @Enumerated(EnumType.STRING)
@@ -43,4 +39,5 @@ public class Account extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private UpdateStatus lastBalanceUpdateStatus;
+
 }

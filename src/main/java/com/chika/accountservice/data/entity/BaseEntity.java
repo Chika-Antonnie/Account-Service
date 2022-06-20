@@ -1,4 +1,4 @@
-package com.chika.accountservice.entity;
+package com.chika.accountservice.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;

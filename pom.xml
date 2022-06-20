@@ -49,6 +49,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -65,7 +75,20 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.0.0</version>
+                <configuration>
+                    <user>sa</user>
+                    <password>password</password>
+<!--                    <schemas>-->
+<!--                        <schema>schemaName</schema>-->
+<!--                    </schemas>-->
+                </configuration>
+            </plugin>
         </plugins>
+        <finalName>account-service</finalName>
     </build>
 
 </project>
