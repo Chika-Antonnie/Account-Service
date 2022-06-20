@@ -6,6 +6,8 @@ import org.springframework.beans.BeanUtils;
 
 public class CustomerConverter extends BaseConverter<Customer, CustomerDto>{
 
+    AccountConverter accountConverter = new AccountConverter();
+
     @Override
     public Customer convertToEntity(CustomerDto dto, Object... args) {
         Customer entity = new Customer();

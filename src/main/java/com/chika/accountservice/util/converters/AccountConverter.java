@@ -5,6 +5,7 @@ import com.chika.accountservice.data.entity.Account;
 import org.springframework.beans.BeanUtils;
 
 public class AccountConverter extends BaseConverter<Account, AccountDto>{
+
     @Override
     public Account convertToEntity(AccountDto dto, Object... args) {
         Account entity = new Account();
