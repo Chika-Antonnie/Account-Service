@@ -3,12 +3,9 @@ package com.chika.accountservice.data.entity;
 
 import com.chika.accountservice.util.enums.AccountStatus;
 import com.chika.accountservice.util.enums.AccountType;
-import com.chika.accountservice.util.enums.UpdateStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -37,7 +34,5 @@ public class Account extends BaseEntity {
 
     private BigDecimal balance;
 
-    @Enumerated(EnumType.STRING)
-    private UpdateStatus lastBalanceUpdateStatus;
 
 }
