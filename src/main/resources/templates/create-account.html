@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Create Current Account</h1>
+    <label>Customer ID</label>
+    <input name="customerId" id="custId" type="text"/>
+    <br/>
+    <br/>
+    <label>Initial Balance</label>
+    <input name="initialBalance" id="initialCredit" type="number"/>
+    <br/> <br/>
+    <button onclick="submit()">Submit</button>
+</div>
+
+<br/> <br/>
+<div id="reponsediv" style="color: red; font-weight: bold">
+
+</div>
+<script>
+    const submit = async () => {
+        console.log("called method",JSON.stringify({customerId: document.getElementById("custId").value, initialCredit: document.getElementById("initialCredit").value}));
+
+        const response = await fetch('/api/v1/customer/create-account', {
+            method: 'PUT',
+            referrerPolicy: 'no-referrer',
+            headers: {
+                'Content-type': 'application/json',
+                'origin': ""
+            },
+            body: JSON.stringify({customerId: document.getElementById("custId").value, initialCredit: document.getElementById("initialCredit").value})
+        });
+
+        const resData = await response.json();
+        console.log("Json response>>>>>>>>", resData);
+
+        document.getElementById("reponsediv").innerHTML = "New account number created: "+resData.accountNumber;
+
+    }
+</script>
+</body>
+</html>
