@@ -15,12 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerController {
     private final CustomerService customerService;
 
-//    @GetMapping("/{customerId}")
-//    public ResponseEntity findCustomer(@PathVariable(name = "customerId") long customerId){
-//        log.info("find customer request for customerId: {}",customerId);
-//        return ResponseEntity.ok(customerService.getCustomerByCustomerId(customerId));
-//    }
-
     @PutMapping("/create-account")
     public ResponseEntity createAccount(@RequestBody CreateAccountRequest request){
         log.info("create account request for customerId: {}",request.getCustomerId());
